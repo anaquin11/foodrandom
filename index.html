@@ -8,12 +8,22 @@
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" async="" src="js/jquery-ui-1.12.0/jquery-ui.js"></script>
 	<script type="text/JavaScript">
+		var menu = ["ชั้น10","ชั้น3","ซอยสายลม","สามภาค"];
+
 		$(document).ready(function() {
 		// standard on load code goes here with $ prefix
 		// note: the $ is setup inside the anonymous function of the ready command
+		// 
+			var buffer = ""
+			for(var i=0; i < menu.length; i++){ 
+		        var item = menu[i]; 
+		        console.log(item);
+		        buffer+='<li class="ui-menu-item"><div id="ui-id-15" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">'+item+'</div></li>'; 
+			} 
+			$('#lmenu').html(buffer);
 		});
 
-		var menu = ["ชั้น10","ชั้น3","ซอยสายลม","สามภาค"];
+		
 
 		function randomtext() {
 			var item = menu[Math.floor(Math.random()*menu.length)];
@@ -23,6 +33,12 @@
 
 </head>
 <body>
+	
+	<h2 class="demoHeaders">สถานที่</h2>
+	<ul style="width:30%;" id="lmenu" role="menu" tabindex="0" class="ui-menu ui-widget ui-widget-content">
+
+	</ul>
+
 	<h2 class="demoHeaders">กินไรดี</h2>
 	<input type="text" class="ui-autocomplete-input" id="txtmsg" readonly="true" />
 	<br>
