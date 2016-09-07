@@ -1,1 +1,33 @@
-Hello Word
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+	<title>Food Random</title>
+	<link rel="stylesheet" href="js/jquery-ui-1.12.0/jquery-ui.css">
+	<script type="text/javascript" async="" src="js/jquery-ui-1.12.0/external/jquery/jquery.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" async="" src="js/jquery-ui-1.12.0/jquery-ui.js"></script>
+	<script type="text/JavaScript">
+		$(document).ready(function() {
+		// standard on load code goes here with $ prefix
+		// note: the $ is setup inside the anonymous function of the ready command
+		});
+
+		var menu = ["ชั้น10","ชั้น3","ซอยสายลม","สามภาค"];
+
+		function randomtext() {
+			var item = menu[Math.floor(Math.random()*menu.length)];
+			$("#txtmsg").val(item);
+		}
+	</script>
+
+</head>
+<body>
+	<h2 class="demoHeaders">กินไรดี</h2>
+	<input type="text" class="ui-autocomplete-input" id="txtmsg" readonly="true" />
+	<br>
+	<br>
+	<br>
+	<input type="submit" class="ui-button ui-corner-all ui-widget" value="Submit" onclick="randomtext()">
+</body>
+</html>
